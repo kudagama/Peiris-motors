@@ -14,6 +14,18 @@
     <link rel="stylesheet" href="assets/css/product_cards.css">
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        .featured-swiper {
+            height: auto !important;
+            padding-bottom: 40px;
+        }
+
+        .featured-swiper .swiper-slide {
+            height: auto !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -161,14 +173,114 @@
         </div>
     </section>
 
+    <!-- Popular Spare Parts Slider -->
+    <section class="section-padding" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Popular Spare Parts</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="swiper featured-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Part 1 -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/img/spare_oil_bottle.png" alt="Bajaj DTSi Oil"
+                                    style="object-fit: contain; padding: 20px;">
+                            </div>
+                            <div class="product-info">
+                                <h3>Bajaj DTSi Oil</h3>
+                                <p class="product-cat">Engine Oil</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Part 2 -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/img/product/product_chain_set.png" alt="Chain Sprocket Kit"
+                                    style="object-fit: contain; padding: 20px;">
+                            </div>
+                            <div class="product-info">
+                                <h3>Chain Sprocket Kit</h3>
+                                <p class="product-cat">Transmission</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Part 3 -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/img/product/product_battery.png" alt="Exide Battery"
+                                    style="object-fit: contain; padding: 20px;">
+                            </div>
+                            <div class="product-info">
+                                <h3>Exide Battery</h3>
+                                <p class="product-cat">Electrical</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Part 4 -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/img/product/product_spark_plug.png" alt="Spark Plugs"
+                                    style="object-fit: contain; padding: 20px;">
+                            </div>
+                            <div class="product-info">
+                                <h3>Spark Plugs</h3>
+                                <p class="product-cat">Ignition</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
     <!-- Components Loader -->
     <script src="assets/js/components-loader.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         AOS.init({ duration: 1000, once: false, mirror: true });
+
+        // Initialize Swiper
+        var swiper = new Swiper(".featured-swiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+            },
+        });
     </script>
 </body>
 
